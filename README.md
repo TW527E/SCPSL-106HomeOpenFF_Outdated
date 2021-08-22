@@ -5,6 +5,8 @@
 </a><br>
 Made By Canhui Server Enginner Cheng Cheng#7773
 
+**For EXILED 3.0**
+
 # Main Features
 When the round is ended, automatically teleport everyone to the bottom of room 106, and destroy the door bottom room 106 and open friendly fire.
 
