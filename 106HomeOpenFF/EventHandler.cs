@@ -10,8 +10,10 @@ namespace P106HomeOpenFF
     {
         public void OnRoundStarted()
         {
-            ServerConsole.FriendlyFire = false;
-            ServerConfigSynchronizer.Singleton.RefreshMainBools();
+            foreach (Player Ply in Player.List)
+            {
+                Ply.IsFriendlyFireEnabled = true;
+            }
         }
 
         public void OnRoundEnded(RoundEndedEventArgs ev)
@@ -22,11 +24,17 @@ namespace P106HomeOpenFF
                 {
                     foreach (Player Ply in Player.List)
                     {
-                        doorVariant.BreakDoor();
-                        var doorPos = doorVariant.Base.transform.position;
-                        Ply.Position = new Vector3(doorPos.x, doorPos.y + 1, doorPos.z);
-                        ServerConsole.FriendlyFire = true;
-                        ServerConfigSynchronizer.Singleton.RefreshMainBools();
+                        if (P106HomeOpenFF.P106HomeOpenFFRef.Config.OnlyFF == true)
+                        {
+                            Ply.IsFriendlyFireEnabled = true;
+                        }
+                        else
+                        {
+                            doorVariant.BreakDoor();
+                            var doorPos = doorVariant.Base.transform.position;
+                            Ply.Position = new Vector3(doorPos.x, doorPos.y + 1, doorPos.z);
+                            Ply.IsFriendlyFireEnabled = true;
+                        }
                     }
                 }
             }
