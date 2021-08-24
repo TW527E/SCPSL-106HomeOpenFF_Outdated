@@ -14,4 +14,5 @@ When the round is ended, automatically teleport everyone to the bottom of room 1
 ```yaml
 P106HomeOpenFF:
   is_enabled: true
+  onlyff: false
 ```
