@@ -1,5 +1,6 @@
 # 106HomeOpenFF
 ![EXILED CI](https://github.com/galaxy119/EXILED/workflows/EXILED%20CI/badge.svg?branch=2.0.0)
+![GitHub Release](https://img.shields.io/github/release/TW527E/106HomeOpenFF/all.svg?style=flat)
 <a href="https://discord.gg/JQcM2WwYfH">
   <img src="https://img.shields.io/discord/770662699239473162?logo=discord" alt="Chat on Discord">
 </a><br>
