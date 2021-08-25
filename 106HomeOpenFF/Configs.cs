@@ -6,6 +6,6 @@ namespace P106HomeOpenFF
     public sealed class Configs : IConfig
     {
         public bool IsEnabled { get; set; } = true;
-        public bool OnlyFF { get; set; } = false;
+        public bool Onlyff { get; set; } = false;
     }
 }

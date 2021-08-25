@@ -24,7 +24,7 @@ namespace P106HomeOpenFF
                 {
                     foreach (Player Ply in Player.List)
                     {
-                        if (P106HomeOpenFF.P106HomeOpenFFRef.Config.OnlyFF == true)
+                        if (P106HomeOpenFF.P106HomeOpenFFRef.Config.Onlyff == true)
                         {
                             Ply.IsFriendlyFireEnabled = true;
                         }
