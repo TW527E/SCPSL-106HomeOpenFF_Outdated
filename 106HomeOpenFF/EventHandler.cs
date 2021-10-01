@@ -8,11 +8,14 @@ namespace P106HomeOpenFF
 {
     public class EventHandler
     {
+        public P106HomeOpenFF Plugin;
+        public EventHandler(P106HomeOpenFF plugin) => this.Plugin = plugin;
+
         public void OnRoundStarted()
         {
             foreach (Player Ply in Player.List)
             {
-                Ply.IsFriendlyFireEnabled = true;
+                Ply.IsFriendlyFireEnabled = false;
             }
         }
 
@@ -24,7 +27,7 @@ namespace P106HomeOpenFF
                 {
                     foreach (Player Ply in Player.List)
                     {
-                        if (P106HomeOpenFF.P106HomeOpenFFRef.Config.Onlyff == true)
+                        if (P106HomeOpenFF.Instance.Config.Onlyff == true)
                         {
                             Ply.IsFriendlyFireEnabled = true;
                         }

@@ -5,15 +5,15 @@ namespace P106HomeOpenFF
 {
     public class P106HomeOpenFF : Plugin<Configs>
     {
-        public static P106HomeOpenFF P106HomeOpenFFRef;
         public override string Prefix => "P106HomeOpenFF";
+        public static P106HomeOpenFF Instance;
 
         private EventHandler eventHandlers;
 
         public override void OnEnabled()
         {
-            P106HomeOpenFFRef = this;
-            eventHandlers = new EventHandler();
+            Instance = this;
+            eventHandlers = new EventHandler(this);
 
             Server.RoundStarted += eventHandlers.OnRoundStarted;
             Server.RoundEnded += eventHandlers.OnRoundEnded;
@@ -25,8 +25,6 @@ namespace P106HomeOpenFF
             Server.RoundEnded -= eventHandlers.OnRoundEnded;
             Server.RoundStarted -= eventHandlers.OnRoundStarted;
             eventHandlers = null;
-            P106HomeOpenFFRef = null;
-            base.OnDisabled();
         }
     }
 }
